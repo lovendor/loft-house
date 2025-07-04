@@ -1,0 +1,74 @@
+.hero__content {
+  color: #fff;
+
+  h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    margin-top: 150px;
+    color: #D4C17F;
+    font-family: 'Playfair Display', serif;
+  }
+
+  p {
+    font-size: 48px;
+    margin: auto;
+    margin-bottom: 120px;
+    color: #D4C17F;
+    font-family: 'Playfair Display', serif;
+  }
+  .mouse{
+    margin-top: 15px;
+    margin-bottom: 130px;
+  }
+  button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .text1 {
+    font-size: 15px;
+    margin: auto;
+    margin-bottom: 30px;
+    color: white;
+  }
+  img {
+  position: relative;
+  top: -13px; 
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 10px; // расстояние между иконкой и текстом
+  }
+
+  .text2 {
+    margin: 0;
+    font-size: 15px;
+    margin: auto;
+    margin-bottom: 30px;
+    color: white;
+  }
+  .nomer {
+    display: flex;
+    gap: 150px;
+  }
+}
+
+.hero {
+  background: linear-gradient(180deg, #242B33 11.98%, rgba(45, 52, 60, 0.38) 51.04%, #242B33 92.19%), url('/assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

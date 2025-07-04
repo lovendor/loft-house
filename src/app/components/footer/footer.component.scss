@@ -1,0 +1,124 @@
+// .footer {
+//   padding: 60px 0;
+//   background-color: #2D343C;
+//   color: #fff;
+//   font-size: 14px;
+
+//   .footer__container {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 20px;
+//     max-width: 1050px;
+//     margin: 0 auto;
+//     align-items: start;
+//   }
+
+//   .footer__logo {
+//     font-size: 24px;
+//     color: #D4C17F;
+//     font-family: 'Post No Bills Jaffna SemiBold', serif;
+//   }
+
+//   .footer__nav {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 10px;
+
+//     a {
+//       color: #fff;
+//       text-decoration: none;
+
+//       &:hover {
+//         color: #D4C17F;
+//       }
+//     }
+//   }
+
+//   .footer__socials {
+//     margin-top: 10px;
+//     display: flex;
+//     gap: 10px;
+
+//     img {
+//       width: 20px;
+//       height: 20px;
+//     }
+//   }
+
+//   a {
+//     color: #fff;
+//     text-decoration: none;
+
+//     &:hover {
+//       color: #D4C17F;
+//     }
+//   }
+// }
+
+ p {
+    margin: 0;
+ }
+
+.footer {
+  padding: 60px 0;
+  background-color: #2D343C;
+  color: #fff;
+  font-size: 14px;
+
+  .footer__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1050px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .footer__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+  }
+
+  .footer__logo {
+    font-size: 24px;
+    color: #D4C17F;
+    font-family: 'Post No Bills Jaffna SemiBold', serif;
+    margin: 0; // убираем лишние отступы
+  }
+
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        color: #D4C17F;
+      }
+    }
+  }
+
+  .footer__socials {
+    display: flex;
+    gap: 10px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      color: #D4C17F;
+    }
+  }
+}

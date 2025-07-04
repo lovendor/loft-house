@@ -1,0 +1,64 @@
+.header {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  z-index: 10; // чтобы был выше фона
+  background: transparent; 
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .nav {
+    display: flex;
+    gap: 30px;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+ .logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  text-decoration: none;
+  color: #fff;
+
+
+  .logo-main {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Post No Bills Jaffna', serif;
+  }
+
+  .logo-sub {
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+}
+
+}

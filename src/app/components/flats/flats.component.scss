@@ -1,0 +1,46 @@
+.flats {
+  padding: 70px 0;
+  background-color: #242B33;
+  color: #fff;
+
+  .title {
+    margin-left: 243px;
+    color: #D4C17F;
+    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 60px;
+  }
+
+//   .flats__grid {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 30px;
+//   }
+    .flats__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 0.17fr); 
+        gap: 30px;
+        justify-content: center; 
+    }
+
+
+  .flat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 500px;
+      height: 240px;
+      object-fit: cover;
+      border: 1px solid #3C444D;
+    }
+
+    .flat__title {
+      margin-top: 16px;
+      font-size: 16px;
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+    }
+  }
+}
