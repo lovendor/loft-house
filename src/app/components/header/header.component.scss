@@ -1,15 +1,22 @@
 .header {
-  position: absolute;
-  top: 25px;
+  // position: absolute;
+  // top: 25px;
   left: 0;
   width: 100%;
-  z-index: 10; // чтобы был выше фона
-  background: transparent; 
+  z-index: 1000;  
+  // background: transparent; 
+  // background: #242B33;
+  position: fixed;
+    padding: 20px 0;
+  // background: #242B33;
+  background: rgba(36, 43, 51, 0.8);
+  backdrop-filter: blur(15px); 
 
   .container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 15px;
+
   }
 
   .header__content {

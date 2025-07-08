@@ -8,17 +8,19 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
   selector: 'app-login-form',
   standalone: true,
   imports: [ReactiveFormsModule, UserInfoComponent, CommonModule],
+  styleUrls: ['./login-form.component.scss'],
   template: `
     <form [formGroup]="form">
       <input formControlName="login" placeholder="Login" />
       <input type="password" formControlName="password" placeholder="Password" />
-      <input formControlName="Objectforme" placeholder="Objectforme" />
-      <div style="margin-top: 10px;">
+      <!-- <input formControlName="Objectforme" placeholder="Objectforme" /> -->
+      <div class="form-buttons">
         <!-- <button type="button" (click)="showValues()">Показать данные</button> -->
         <button class="clear" style="width: 200px;" type="button" (click)="ClearForm()">Убрать</button>
         <!-- <button type="button" (click)="toggleLogin()">Заблокировать логин</button> -->
         <button class="inactive" type="button" (click)="disable()">Заблокировать логин и пароль</button>
         <button class="showData" type="button" (click)="checkUsers()">Показать данные</button>
+
 
       </div>
     </form>
@@ -32,8 +34,8 @@ export class LoginFormComponent implements OnInit {
 
   form = new FormGroup({
     login: new FormControl(''),
-    password: new FormControl(''),
-    Objectforme: new FormControl(''),
+    password: new FormControl('')
+    // Objectforme: new FormControl(''),
     // disable: new FormControl('')
   });
 
@@ -68,7 +70,7 @@ export class LoginFormComponent implements OnInit {
       this.username = '';
       this.isFound = false;
       this.warning.emit('поьзователь не найден');
-      // alert('Пользователь не найден');
+      alert('Пользователь не найден');
       // this.warningText = 'Пользователь не найден';
     }
   // ngOnInit() {}
