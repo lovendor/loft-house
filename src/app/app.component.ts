@@ -1,24 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common'; 
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  template: `
-    <app-login-form (warning)="handleWarning($event)"></app-login-form>
-    <div *ngIf="warningText" class="warning">{{ warningText }}</div>
-  `,
 })
-export class AppComponent {
-  warningText: string = '';
-
-  handleWarning(msg: string) {
-    if (msg) {
-      alert(msg);
-    }
-  }
-}
-
+export class AppComponent {}

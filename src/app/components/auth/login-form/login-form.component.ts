@@ -3,6 +3,14 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { UserInfoComponent } from '../user-info/user-info.component';
 import { CommonModule } from '@angular/common';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
+import { login as loginAction, logout } from '../../../store/auth/auth.actions';
+import { Router } from '@angular/router';
+
+
+
+
+
 
 @Component({
   selector: 'app-login-form',
@@ -30,6 +38,8 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 })
 export class LoginFormComponent implements OnInit {
   @Output() warning = new EventEmitter<string>();
+  constructor(private store: Store, private router: Router) {}
+
 
 
   form = new FormGroup({
@@ -42,39 +52,45 @@ export class LoginFormComponent implements OnInit {
   users = [
     { username: 'admin', login: 'admin', password: 'admin' },
     { username: 'Paul', login: 'Fisher', password: 'fisher' },
-
+    { username: 'Doszhan', login: 'Doszhan', password: 'Doszhan' },
+    { username: 'Nurzat', login: 'Nurzat', password: 'Nurzat' },
+    { username: 'Arlan', login: 'Arlan', password: 'Arlan' },
+    { username: 'Roman', login: 'Roman', password: 'Roman' }
   ]
   username: string = '';
   isFound: boolean = false;
 
 
   checkUsers() {
-    const login = this.form.get('login')?.value;
-    const password = this.form.get('password')?.value;
+  const login = this.form.get('login')?.value;
+  const password = this.form.get('password')?.value;
 
-    const user = this.users.find(
-      user => user.login === login && user.password === password
-    );
+  const user = this.users.find(
+    user => user.login === login && user.password === password
+  );
 
-    if (user) {
-      this.username = user.username;
-      this.isFound = true;
+  if (user) {
+    this.username = user.username;
+    this.isFound = true;
+    this.store.dispatch(loginAction({ username: user.username }));
+    this.router.navigate(['/home'], { replaceUrl: true });
 
-      if (user.username !== 'admin') {
-        this.warning.emit('Это не админ');
-        // this.warningText = 'not admin';
-      } else {
-        this.warning.emit('');
-      }
+
+
+    if (user.username !== 'admin') {
+      this.warning.emit('Это не админ');
     } else {
-      this.username = '';
-      this.isFound = false;
-      this.warning.emit('поьзователь не найден');
-      alert('Пользователь не найден');
-      // this.warningText = 'Пользователь не найден';
+      this.warning.emit('');
     }
-  // ngOnInit() {}
+
+  } else {
+    this.username = '';
+    this.isFound = false;
+    this.warning.emit('Пользователь не найден');
+    alert('Пользователь не найден');
   }
+}
+
 
 
   // username = '';

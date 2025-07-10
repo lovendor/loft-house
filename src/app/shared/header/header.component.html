@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="container">
+    <div class="header__content">
+      <a routerLink="/" class="logo">
+        <span class="logo-main">LoftHouse</span>
+        <span class="logo-sub">жилой комплекс</span>
+      </a>
+      <nav class="nav">
+        <a routerLink="/about">О комплексе</a>
+        <a routerLink="/district">Район</a>
+        <a routerLink="/home#flats">Каталог квартир</a>
+        <a routerLink="/mortgage">Ипотека</a>
+
+        <ng-container *ngIf="user$ | async as username; else loginLink">
+          <span>Вы вошли как: {{ username }}</span>
+          <a (click)="logoutUser()" style="cursor: pointer;">Выйти</a>
+        </ng-container>
+
+        <ng-template #loginLink>
+          <a routerLink="/login">Вход</a>
+        </ng-template>
+      </nav>
+    </div>
+  </div>
+</header>
